@@ -174,3 +174,62 @@ body {
     }
   }
 }
+
+@media screen and (min-width: 768px) {
+  .button {
+    padding: spacing(2) spacing(5);
+    &--link {
+      padding: 0;
+    }
+  }
+
+  .padding-inline {
+    padding-inline: spacing(8);
+  }
+
+  body {
+    .header {
+      padding-block-start: spacing(5);
+      padding-block-end: 0;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 395px;
+      div {
+        padding-inline-end: 0;
+      }
+      &__title {
+        margin-block-start: spacing(7) + 24px;
+      }
+      &__image {
+        img {
+          max-width: 740px;
+          top: -60%;
+          left: 84%;
+        }
+      }
+    }
+    .courses {
+      padding-block: spacing(11) + 28px spacing(14);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: spacing(5);
+      row-gap: spacing(6) + 28px;
+      &__intro {
+        padding: spacing(11) spacing(6) spacing(7);
+      }
+      &__card {
+        &-description {
+          font-size: font-size(desktop, 5);
+          font-weight: $medium;
+        }
+        .button {
+          margin-block-start: auto;
+        }
+      }
+    }
+    .footer {
+      padding-block: spacing(5);
+    }
+  }
+}

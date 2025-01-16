@@ -127,4 +127,55 @@ body .courses__card-description {
 body .footer {
   padding-block: 24px;
   background-color: rgb(19, 24, 63);
+}
+@media screen and (min-width: 768px) {
+  .button {
+    padding: 12px 24px;
+  }
+  .button--link {
+    padding: 0;
+  }
+  .padding-inline, body .header, body .hero div, body .courses, body .footer {
+    padding-inline: 44px;
+  }
+  body .header, body .footer {
+    padding-block-start: 24px;
+    padding-block-end: 0;
+  }
+  body .hero {
+    display: grid;
+    grid-template-columns: 1fr 395px;
+  }
+  body .hero div {
+    padding-inline-end: 0;
+  }
+  body .hero__title {
+    margin-block-start: 64px;
+  }
+  body .hero__image img {
+    max-width: 740px;
+    top: -60%;
+    left: 84%;
+  }
+  body .courses {
+    padding-block: 92px 144px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+    row-gap: 60px;
+  }
+  body .courses__intro {
+    padding: 64px 32px 40px;
+  }
+  body .courses__card-description {
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+  body .courses__card .button {
+    margin-block-start: auto;
+  }
+  body .footer {
+    padding-block: 24px;
+  }
 }/*# sourceMappingURL=main.css.map */
