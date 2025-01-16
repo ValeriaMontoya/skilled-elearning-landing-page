@@ -129,6 +129,7 @@ body {
     }
   }
   .courses {
+    background: linear-gradient(180deg, $white 0%, #F0F1FF 100%);
     @extend .padding-inline;
     display: flex;
     flex-direction: column;
@@ -150,6 +151,7 @@ body {
       padding: spacing(11) spacing(6) spacing(7);
       border-radius: 15px;
       box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
+      background-color: $white;
       position: relative;
       &-icon {
         position: absolute;
