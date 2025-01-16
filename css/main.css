@@ -1,0 +1,128 @@
+@import url("https://api.fonts.coollabs.io/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 175%;
+  padding: 16px 32px;
+  border-radius: 28px;
+}
+.button--blue {
+  background-color: rgb(19, 24, 63);
+}
+.button--orange {
+  background: linear-gradient(180deg, rgb(255, 111, 72) 0%, rgb(240, 42, 166) 100%);
+}
+.button--purple {
+  background: linear-gradient(180deg, rgb(72, 81, 255) 0%, rgb(240, 42, 166) 100%);
+  padding: 12px 24px;
+}
+.button--link {
+  color: rgb(247, 71, 128);
+  line-height: 150%;
+  padding: 0;
+}
+
+.padding-inline, body .courses, body .hero div, body .header, body .footer {
+  padding-inline: 20px;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+body .header, body .footer {
+  padding-block: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .header__logo, body .footer__logo {
+  width: 79.286px;
+  height: 20px;
+}
+body .hero {
+  padding-block: 64px;
+  overflow: hidden;
+}
+body .hero__title {
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 120%;
+  color: rgb(19, 24, 63);
+  margin-block-end: 24px;
+}
+body .hero__description {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 150%;
+  color: rgb(131, 134, 154);
+  margin-block-end: 40px;
+}
+body .hero .button {
+  margin-block-end: 48px;
+}
+body .hero__image {
+  height: 325px;
+}
+body .hero__image img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body .courses {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-block: 64px 80px;
+}
+body .courses__intro {
+  background: linear-gradient(180deg, rgb(255, 111, 72) 0%, rgb(240, 42, 166) 100%);
+  padding: 32px;
+  border-radius: 15px;
+  box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
+}
+body .courses__title {
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 120%;
+  color: rgb(255, 255, 255);
+}
+body .courses__card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 64px 32px 40px;
+  border-radius: 15px;
+  box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
+  position: relative;
+}
+body .courses__card-icon {
+  position: absolute;
+  top: -28px;
+}
+body .courses__card-title {
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 120%;
+  color: rgb(19, 24, 63);
+}
+body .courses__card-description {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 150%;
+  color: rgb(131, 134, 154);
+}
+body .footer {
+  padding-block: 24px;
+  background-color: rgb(19, 24, 63);
+}/*# sourceMappingURL=main.css.map */

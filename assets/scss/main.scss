@@ -1,0 +1,174 @@
+// Colors
+$blue-900: rgb(19, 24, 63);
+$blue-600: rgb(102, 108, 163);
+$pink-600: rgb(247, 71, 128);
+$pink-300: rgb(255, 167, 195);
+$grey: rgb(131, 134, 154);
+$white: rgb(255, 255, 255);
+
+// Gradients
+$gradient-pink: linear-gradient(180deg, rgb(255, 111, 72) 0%, rgb(240, 42, 166) 100%);
+$gradient-purple: linear-gradient(180deg, rgb(72, 81, 255) 0%, rgb(240, 42, 166) 100%);
+
+// Typography
+@import url('https://api.fonts.coollabs.io/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap');
+
+$font-family: "Plus Jakarta Sans", sans-serif;
+$extrabold: 800;
+$bold: 700;
+$medium: 500;
+$heading-line-height: 120%;
+$body-line-height: 150%;
+$font-sizes-desktop: 3.5rem, 2.5rem, 2rem, 1.5rem, 1.125rem, 1rem;
+$font-sizes-tablet-mobile: 2.5rem, 2rem, 1.5rem, 1.25rem, 0.875rem;
+
+@function font-size($device, $index) {
+  @if $device == desktop {
+    @return nth($font-sizes-desktop, $index);
+  } @else if $device == tablet-mobile {
+    @return nth($font-sizes-tablet-mobile, $index);
+  }
+}
+
+@mixin heading-preset($weight: $extrabold, $size, $line-height: $heading-line-height, $color) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin body-preset($weight, $size, $line-height: $body-line-height, $color) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+// Spacing
+$spacings: 8px, 12px, 16px, 20px, 24px, 32px, 40px, 44px, 48px, 56px, 64px, 80px, 128px, 144px;
+
+@function spacing($index) {
+  @return nth($spacings, $index);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  color: $white;
+  font-weight: $bold;
+  font-size: font-size(desktop, 5);
+  line-height: 175%;
+  padding: spacing(3) spacing(6);
+  border-radius: 28px;
+  &--blue {
+    background-color: $blue-900;
+  }
+  &--orange {
+    background: $gradient-pink;
+  }
+  &--purple {
+    background: $gradient-purple;
+    padding: spacing(2) spacing(5);
+  }
+  &--link {
+    color: $pink-600;
+    line-height: $body-line-height;
+    padding: 0;
+  }
+}
+
+.padding-inline {
+  padding-inline: spacing(4);
+}
+
+body {
+  font-family: $font-family;
+  .header {
+    @extend .padding-inline;
+    padding-block: spacing(3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {
+      width: 79.286px;
+      height: 20px;
+    }
+  }
+  .hero {
+    padding-block: spacing(11);
+    overflow: hidden;
+    div {
+      @extend .padding-inline;
+    }
+    &__title {
+      @include heading-preset($size: font-size(tablet-mobile, 1), $color: $blue-900);
+      margin-block-end: spacing(5);
+    }
+    &__description {
+      @include body-preset($weight: $medium, $size: font-size(desktop, 5), $color: $grey);
+      margin-block-end: spacing(7);
+    }
+    .button {
+      margin-block-end: spacing(9);
+    }
+    &__image {
+      height: 325px;
+      img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .courses {
+    @extend .padding-inline;
+    display: flex;
+    flex-direction: column;
+    gap: spacing(6) + 28px;
+    padding-block: spacing(11) spacing(12);
+    &__intro {
+      background: $gradient-pink;
+      padding: spacing(6);
+      border-radius: 15px;
+      box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
+    }
+    &__title {
+      @include heading-preset($size: font-size(tablet-mobile, 3), $color: $white);
+    }
+    &__card {
+      display: flex;
+      flex-direction: column;
+      gap: spacing(5);
+      padding: spacing(11) spacing(6) spacing(7);
+      border-radius: 15px;
+      box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
+      position: relative;
+      &-icon {
+        position: absolute;
+        top: -28px;
+      }
+      &-title {
+        @include heading-preset($size: font-size(tablet-mobile, 4), $color: $blue-900);
+      }
+      &-description {
+        @include body-preset($weight: $bold, $size: font-size(desktop, 6), $color: $grey);
+      }
+    }
+  }
+  .footer {
+    @extend .header;
+    padding-block: spacing(5);
+    background-color: $blue-900;
+    &__logo {
+      @extend .header__logo;
+    }
+  }
+}
